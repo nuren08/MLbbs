@@ -1,0 +1,194 @@
+/* ML论坛主样式文件 */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --rainbow-gradient: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* 帖子卡片样式 */
+.post-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 1rem;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.post-header {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem;
+}
+
+.post-content {
+    padding: 1rem;
+}
+
+.post-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+}
+
+/* 用户头像 */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-avatar-lg {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 进度条样式 */
+.progress {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+/* 签到进度条 */
+.signin-progress .progress-bar {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+}
+
+/* 等级徽章 */
+.level-badge {
+    background: var(--rainbow-gradient);
+    color: white;
+    border-radius: 15px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* 按钮样式 */
+.btn-rainbow {
+    background: var(--rainbow-gradient);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-rainbow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: white;
+}
+
+/* 表单样式 */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+/* 导航激活状态 */
+.nav-link.active {
+    font-weight: bold;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .rainbow-text {
+        font-size: 1.4rem;
+    }
+    
+    .floating-signin {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* 验证码发送按钮 */
+.verification-btn {
+    white-space: nowrap;
+}
+
+.verification-btn:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+/* 成功提示 */
+.alert-success {
+    border-left: 4px solid var(--success-color);
+}
+
+.alert-warning {
+    border-left: 4px solid var(--warning-color);
+}
+
+.alert-danger {
+    border-left: 4px solid var(--danger-color);
+}
+
+/* 帖子标签 */
+.post-tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 15px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tag-hot {
+    background: #ffe6e6;
+    color: #d63031;
+}
+
+.tag-new {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tag-essence {
+    background: #fff3e0;
+    color: #f57c00;
+}
